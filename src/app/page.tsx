@@ -1,28 +1,11 @@
-
-const services = [
-  {
-    icon: "🎨",
-    title: "Éveil et créativité",
-    description: "Des activités artistiques pour développer l'imagination."
-  },
-  {
-    icon: "📚",
-    title: "Apprentissage",
-    description: "Des jeux éducatifs adaptés à chaque âge."
-  },
-  {
-    icon: "🧸",
-    title: "Jeux et socialisation",
-    description: "Des moments de partage dans un environnement sécurisé."
-  }
-];
+﻿import Services from "@/components/Services";
 
 export default function Home() {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-white shadow-sm">
         <div className="container">
-          <a className="navbar-brand fw-bold brand-color" href="#">
+          <a className="navbar-brand fw-bold brand-color" href="#accueil">
             🧸 Les Petits Explorateurs
           </a>
 
@@ -31,6 +14,8 @@ export default function Home() {
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#menu"
+            aria-controls="menu"
+            aria-expanded="false"
             aria-label="Ouvrir le menu"
           >
             <span className="navbar-toggler-icon" />
@@ -73,28 +58,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services" className="container py-5">
-        <div className="text-center mb-5">
-          <h2 className="fw-bold">Nos services</h2>
-          <p>Un accompagnement adapté au développement de chaque enfant.</p>
-        </div>
-
-        <div className="row g-4">
-          {services.map((service) => (
-            <div className="col-md-4" key={service.title}>
-              <div className="card service-card p-4 text-center">
-                <div className="display-4">{service.icon}</div>
-                <h3 className="h5 fw-bold mt-3">{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Services />
 
       <footer id="contact" className="bg-white py-4 text-center">
-        <p className="mb-1 fw-bold">Les Petits Explorateurs</p>
-        <p className="mb-0">Contactez-nous pour visiter notre garderie.</p>
+        <div className="container">
+          <p className="mb-1 fw-bold">Les Petits Explorateurs</p>
+          <p className="mb-1">Contactez-nous pour visiter notre garderie.</p>
+          <p className="mb-0">Adresse : Tunis, Tunisie</p>
+        </div>
       </footer>
     </>
   );
